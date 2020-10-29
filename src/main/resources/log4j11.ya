@@ -1,0 +1,17 @@
+logging:
+    level: INFO
+    appenders:
+      - type: file
+        currentLogFilename: /Users/kusatyam/logdir/sparkline_dataplane.log
+        archive: true
+        archivedLogFilenamePattern: /Users/kusatyam/logdir/sparkline_dataplane.log.%d.log.gz
+        archivedFileCount: 24
+        timeZone: UTC
+        logFormat: "%-4r [%t] %5p %c{1} %x - %m - id=%X{requestKey}%n"
+      - type: oci-log-file
+        currentLogFilename: /Users/kusatyam/logdir/sparkline_dataplane_structured.log
+        archive: true
+        archivedLogFilenamePattern: /Users/kusatyam/logdir/sparkline_dataplane_structured.%d.log.gz
+        logFormat: "%-4r [%t] %5p %c{1} %x - %m - id=%X{requestKey}%n"
+        archivedFileCount: 3
+        timeZone: UTC
